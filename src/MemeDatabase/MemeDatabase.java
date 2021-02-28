@@ -118,7 +118,22 @@ public class MemeDatabase {
     public void searchMemeByTitle () {
         System.out.print("Enter a title to search by: ");
         String title = scan.nextLine();
-        // initiate query;
+        ResultSet rs = null;
+        Statement stmt = null;
+        try {
+            rs = stmt("SELECT * FROM meme, (SELECT contains.meme_id FROM contains WHERE contains.picture_title =" +
+                    title + ") as B WHERE meme.meme_id = B.meme_id;);
+            //need to pass the title to open or find
+        } catch (SQLExeption sq1) {
+           sq1.printStackTrace(); 
+        } finally {
+            try {
+                rs.close();
+                stmt.close();
+            } catch (SQLException e) {
+                System.out.println("System failed to close connection safely");
+            }
+        }
     }
 
     public void searchMemeByCategory () {
