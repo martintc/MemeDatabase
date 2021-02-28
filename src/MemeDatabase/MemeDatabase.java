@@ -79,22 +79,22 @@ public class MemeDatabase {
             String option = menu();
             switch (option) {
                 case "1" :
-                    // do something
+                    searchMemeByTitle();
                     break;
                 case "2" :
-                    // do something
+                    searchMemeByCategory();
                     break;
                 case "3" :
-                    // do something
+                    favoriteMeme();
                     break;
                 case "4" :
-                    // do something
+                    viewMeme();
                     break;
                 case "5" :
-                    // do something
+                    createMeme();
                     break;
                 case "6" :
-                    // do something
+                    deleteMeme();
                     break;
                 default :
                     System.out.println("Wrong input");
@@ -121,4 +121,34 @@ public class MemeDatabase {
         // initiate query;
     }
 
+    public void searchMemeByCategory () {
+        System.out.print("Enter a category to search by: ");
+        String title = scan.nextLine();
+        // initiate query;
+    }
+
+    public void favoriteMeme () {
+        System.out.print("Enter a title to favorite: ");
+        String title = scan.nextLine();
+        // initiate query;
+    }
+
+    public void viewMeme () {
+        System.out.print("Enter a title view: ");
+        String title = scan.nextLine();
+        // initiate query;
+    }
+
+    public void createMeme () {
+        System.out.print("Enter a title for new meme: ");
+        String title = scan.nextLine();
+        // initiate insert;
+    }
+
+    public void deleteMeme () {
+        System.out.print("Enter a title to delete: ");
+        String title = scan.nextLine();
+        // initiate deletion;
+        // required to be author
+    }
 }
